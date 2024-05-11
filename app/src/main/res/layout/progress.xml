@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="13dp"
+    android:layout_centerHorizontal="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:fontFamily="@font/antona_regular"
+        android:layout_width="wrap_content"
+        android:text="Progress Ongoing. Please wait..."
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/loading_msg"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/loader" />
+
+</LinearLayout>

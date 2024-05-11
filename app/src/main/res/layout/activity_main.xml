@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="#23343C" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize">
+
+                <LinearLayout
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginRight="20dp"
+                        android:gravity="left">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:src="@drawable/graduation_hat"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"/>
+
+                            <TextView
+                                android:layout_marginStart="10dp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/antona_regular"
+                                android:gravity="center"
+                                android:text="E-GradNayan"></TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:background="#F3F5F9"></View>
+
+        <FrameLayout
+            android:id="@+id/frMain"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:background="@color/white"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vYearBook"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="3sp"
+                android:background="#23343C" />
+
+            <View
+                android:id="@+id/vAccount"
+                android:visibility="invisible"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="3sp"
+                android:background="#23343C" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:id="@+id/lnYearBook"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/vocabulary"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textSize="13sp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/antona_regular"
+                    android:gravity="center"
+                    android:text="Yearbook"></TextView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lnAccount"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/user_circle"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textSize="13sp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/antona_regular"
+                    android:gravity="center"
+                    android:text="Account"></TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

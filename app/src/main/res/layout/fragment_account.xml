@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F0F2F5"
+    tools:context=".fragments.Account">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/antona_regular"
+            android:text="Account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="0dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:fontFamily="@font/antona_regular"
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvCourse"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:fontFamily="@font/antona_regular"
+                        android:text=""
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgExit"
+                    android:alpha="0.80"
+                    android:src="@drawable/logout"
+                    android:layout_width="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdChangePassword"
+                android:layout_weight="1"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_margin="15dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:singleLine="true"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="Change Password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:alpha="0.80"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:visibility="invisible"
+                android:layout_weight="1"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_margin="15dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="Mark Men Doe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="Bacherlor of Science in Information Technology"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:alpha="0.80"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Login">
+
+    <LinearLayout
+        android:id="@+id/lnRegistration"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/lnExit"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/logout"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="@font/antona_regular"
+                    android:text="Exit Application"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/graduation_hat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginStart="5dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="@font/antona_regular"
+                android:text="E-GradNayan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="1dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:fontFamily="@font/antona_regular"
+                        android:text="Login Account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+
+                    <LinearLayout
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="Student Number *"
+                            android:textColor="#545454" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/text_layout">
+
+                            <EditText
+                                android:id="@+id/etStudentNumber"
+                                android:hint="Enter Student Number"
+                                android:textColorHint="#9E9E9E"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="#F8F7FC"
+                                android:ems="10"
+                                android:fontFamily="@font/antona_regular"
+                                android:inputType="textNoSuggestions|text"
+                                android:maxLines="1"
+                                android:paddingStart="10sp"
+                                android:paddingEnd="10sp"
+                                android:textSize="13sp"></EditText>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Password *"
+                                android:textColor="#545454" />
+
+                            <TextView
+                                android:id="@+id/tvForgotPassword"
+                                android:gravity="end"
+                                android:layout_weight="1"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="I forgot my Password"
+                                android:textColor="#00116E" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/text_layout">
+
+                            <EditText
+                                android:id="@+id/etPassword"
+                                android:hint="Enter Password"
+                                android:textColorHint="#9E9E9E"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="#F8F7FC"
+                                android:ems="10"
+                                android:fontFamily="@font/antona_regular"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:paddingStart="10sp"
+                                android:paddingEnd="10sp"
+                                android:textSize="13sp"></EditText>
+
+                            <ImageView
+                                android:alpha="0.50"
+                                android:id="@+id/imgShowPassword"
+                                android:src="@drawable/eye"
+                                android:layout_width="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_height="match_parent"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:id="@+id/lnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/text_layout"
+                        android:backgroundTint="#23343C"
+                        android:gravity="center">
+
+                        <TextView
+                            android:textSize="13sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/antona_regular"
+                            android:gravity="center"
+                            android:text="Login"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/lnSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antona_regular"
+                    android:text="Dont have an Account? "
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antona_regular"
+                    android:text="Create Here"
+                    android:textColor="#23343C"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
