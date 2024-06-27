@@ -9,5 +9,6 @@ data class registrationData(
     @SerializedName("firstName") val firstName: String = "",
     @SerializedName("middleName") val middleName: String = "",
     @SerializedName("lastName") val lastName: String = "",
-    @SerializedName("emailAddress") val emailAddress: String = ""
+    @SerializedName("emailAddress") val emailAddress: String = "",
+    @SerializedName("password") val password: String = ""
 )

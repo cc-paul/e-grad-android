@@ -44,225 +44,172 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:src="@drawable/graduation_hat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_marginStart="5dp"
-                android:textSize="25sp"
-                android:textStyle="bold"
+            <LinearLayout
+                android:orientation="vertical"
                 android:gravity="center"
-                android:fontFamily="@font/antona_regular"
-                android:text="E-GradNayan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.cardview.widget.CardView
-                app:cardElevation="1dp"
-                app:cardCornerRadius="10dp"
-                android:layout_margin="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:orientation="vertical"
+                <ImageView
+                    android:src="@drawable/graduation_hat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="@font/antona_regular"
+                    android:text="E-GradNayan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="1dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="5dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:fontFamily="@font/antona_regular"
-                        android:text="Create Account"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:weightSum="2"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="Create Account"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
 
                         <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <TextView
-                                android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/antona_regular"
-                                android:text="Student Number *"
-                                android:textColor="#545454" />
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/text_layout">
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
-                                <EditText
-                                    android:id="@+id/etStudentNumber"
-                                    android:hint="Enter Student Number"
-                                    android:textColorHint="#9E9E9E"
-                                    android:layout_width="0dp"
-                                    android:layout_height="35dp"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_margin="4dp"
-                                    android:layout_weight="1"
-                                    android:background="#F8F7FC"
-                                    android:ems="10"
+                                <TextView
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:fontFamily="@font/antona_regular"
-                                    android:inputType="number"
-                                    android:maxLines="1"
-                                    android:paddingStart="10sp"
-                                    android:paddingEnd="10sp"
-                                    android:textSize="13sp"></EditText>
+                                    android:text="Student Number *"
+                                    android:textColor="#545454" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/text_layout">
+
+                                    <EditText
+                                        android:id="@+id/etStudentNumber"
+                                        android:hint="Enter Student Number"
+                                        android:textColorHint="#9E9E9E"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="1"
+                                        android:background="#F8F7FC"
+                                        android:ems="10"
+                                        android:fontFamily="@font/antona_regular"
+                                        android:inputType="number"
+                                        android:maxLines="1"
+                                        android:paddingStart="10sp"
+                                        android:paddingEnd="10sp"
+                                        android:textSize="13sp"></EditText>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:text="Year Graduated *"
+                                    android:textColor="#545454" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/text_layout">
+
+                                    <EditText
+                                        android:id="@+id/etYearGraduated"
+                                        android:hint="Enter Year"
+                                        android:textColorHint="#9E9E9E"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="1"
+                                        android:background="#F8F7FC"
+                                        android:ems="10"
+                                        android:maxLength="4"
+                                        android:fontFamily="@font/antona_regular"
+                                        android:inputType="textNoSuggestions|number"
+                                        android:maxLines="1"
+                                        android:paddingStart="10sp"
+                                        android:paddingEnd="10sp"
+                                        android:textSize="13sp"></EditText>
+
+                                </LinearLayout>
+
 
                             </LinearLayout>
 
-
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_weight="1"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="15dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <TextView
-                                android:textSize="13sp"
-                                android:textStyle="bold"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/antona_regular"
-                                android:text="Year Graduated *"
-                                android:textColor="#545454" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/text_layout">
-
-                                <EditText
-                                    android:id="@+id/etYearGraduated"
-                                    android:hint="Enter Year"
-                                    android:textColorHint="#9E9E9E"
-                                    android:layout_width="0dp"
-                                    android:layout_height="35dp"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_margin="4dp"
-                                    android:layout_weight="1"
-                                    android:background="#F8F7FC"
-                                    android:ems="10"
-                                    android:maxLength="4"
-                                    android:fontFamily="@font/antona_regular"
-                                    android:inputType="textNoSuggestions|number"
-                                    android:maxLines="1"
-                                    android:paddingStart="10sp"
-                                    android:paddingEnd="10sp"
-                                    android:textSize="13sp"></EditText>
-
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/antona_regular"
-                            android:text="Course *"
-                            android:textColor="#545454" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/text_layout">
-
-                            <EditText
-                                android:focusable="false"
-                                android:id="@+id/etCourse"
-                                android:hint="Select Course"
-                                android:textColorHint="#9E9E9E"
-                                android:layout_width="0dp"
-                                android:layout_height="35dp"
-                                android:layout_centerHorizontal="true"
-                                android:layout_centerVertical="true"
-                                android:layout_margin="4dp"
-                                android:layout_weight="1"
-                                android:background="#F8F7FC"
-                                android:ems="10"
-                                android:fontFamily="@font/antona_regular"
-                                android:inputType="textNoSuggestions|text"
-                                android:maxLines="1"
-                                android:paddingStart="10sp"
-                                android:paddingEnd="10sp"
-                                android:textSize="13sp"></EditText>
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:weightSum="3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -275,7 +222,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:fontFamily="@font/antona_regular"
-                                android:text="First Name *"
+                                android:text="Course *"
                                 android:textColor="#545454" />
 
                             <LinearLayout
@@ -285,8 +232,9 @@
                                 android:background="@drawable/text_layout">
 
                                 <EditText
-                                    android:id="@+id/etFirstName"
-                                    android:hint="Enter First Name"
+                                    android:focusable="false"
+                                    android:id="@+id/etCourse"
+                                    android:hint="Select Course"
                                     android:textColorHint="#9E9E9E"
                                     android:layout_width="0dp"
                                     android:layout_height="35dp"
@@ -309,10 +257,173 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginStart="10dp"
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:text="First Name *"
+                                    android:textColor="#545454" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/text_layout">
+
+                                    <EditText
+                                        android:id="@+id/etFirstName"
+                                        android:hint="Enter First Name"
+                                        android:textColorHint="#9E9E9E"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="1"
+                                        android:background="#F8F7FC"
+                                        android:ems="10"
+                                        android:fontFamily="@font/antona_regular"
+                                        android:inputType="textNoSuggestions|text"
+                                        android:maxLines="1"
+                                        android:paddingStart="10sp"
+                                        android:paddingEnd="10sp"
+                                        android:textSize="13sp"></EditText>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:text="Middle Name"
+                                    android:textColor="#545454" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/text_layout">
+
+                                    <EditText
+                                        android:id="@+id/etMiddleName"
+                                        android:hint="Enter Middle Name"
+                                        android:textColorHint="#9E9E9E"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="1"
+                                        android:background="#F8F7FC"
+                                        android:ems="10"
+                                        android:fontFamily="@font/antona_regular"
+                                        android:inputType="textNoSuggestions|text"
+                                        android:maxLines="1"
+                                        android:paddingStart="10sp"
+                                        android:paddingEnd="10sp"
+                                        android:textSize="13sp"></EditText>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:textSize="13sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:text="Last Name *"
+                                    android:textColor="#545454" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/text_layout">
+
+                                    <EditText
+                                        android:id="@+id/etLastName"
+                                        android:hint="Enter Last Name"
+                                        android:textColorHint="#9E9E9E"
+                                        android:layout_width="0dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="1"
+                                        android:background="#F8F7FC"
+                                        android:ems="10"
+                                        android:fontFamily="@font/antona_regular"
+                                        android:inputType="textNoSuggestions|text"
+                                        android:maxLines="1"
+                                        android:paddingStart="10sp"
+                                        android:paddingEnd="10sp"
+                                        android:textSize="13sp"></EditText>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                        <!--<LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -336,7 +447,6 @@
                                 android:background="@drawable/text_layout">
 
                                 <EditText
-                                    android:id="@+id/etMiddleName"
                                     android:hint="Enter Middle Name"
                                     android:textColorHint="#9E9E9E"
                                     android:layout_width="0dp"
@@ -360,11 +470,10 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="15dp"
                             android:layout_marginEnd="15dp"
-                            android:layout_width="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -378,7 +487,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:fontFamily="@font/antona_regular"
-                                android:text="Last Name *"
+                                android:text="First Name *"
                                 android:textColor="#545454" />
 
                             <LinearLayout
@@ -388,8 +497,84 @@
                                 android:background="@drawable/text_layout">
 
                                 <EditText
-                                    android:id="@+id/etLastName"
-                                    android:hint="Enter Last Name"
+                                    android:hint="Enter First Name"
+                                    android:textColorHint="#9E9E9E"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="#F8F7FC"
+                                    android:ems="10"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:inputType="textNoSuggestions|text"
+                                    android:maxLines="1"
+                                    android:paddingStart="10sp"
+                                    android:paddingEnd="10sp"
+                                    android:textSize="13sp"></EditText>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>-->
+
+                        <LinearLayout
+                            android:background="@drawable/text_layout"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:backgroundTint="#3CFCBE00"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_margin="5dp"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Please register the last name you used during your enrollment."
+                                android:textColor="#545454" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Email Address *"
+                                android:textColor="#545454" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/text_layout">
+
+                                <EditText
+                                    android:id="@+id/etEmailAddress"
+                                    android:hint="Enter Email Address"
                                     android:textColorHint="#9E9E9E"
                                     android:layout_width="0dp"
                                     android:layout_height="35dp"
@@ -411,215 +596,244 @@
 
                         </LinearLayout>
 
-                    </LinearLayout>
-
-                    <!--<LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/antona_regular"
-                            android:text="Middle Name"
-                            android:textColor="#545454" />
-
                         <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/text_layout">
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
-                            <EditText
-                                android:hint="Enter Middle Name"
-                                android:textColorHint="#9E9E9E"
-                                android:layout_width="0dp"
-                                android:layout_height="35dp"
-                                android:layout_centerHorizontal="true"
-                                android:layout_centerVertical="true"
-                                android:layout_margin="4dp"
-                                android:layout_weight="1"
-                                android:background="#F8F7FC"
-                                android:ems="10"
+                            <TextView
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:fontFamily="@font/antona_regular"
-                                android:inputType="textNoSuggestions|text"
-                                android:maxLines="1"
-                                android:paddingStart="10sp"
-                                android:paddingEnd="10sp"
-                                android:textSize="13sp"></EditText>
+                                android:text="New Password *"
+                                android:textColor="#545454" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/text_layout">
+
+                                <EditText
+                                    android:id="@+id/etNewPassword"
+                                    android:hint="Enter New Password"
+                                    android:textColorHint="#9E9E9E"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="#F8F7FC"
+                                    android:ems="10"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:inputType="textPassword"
+                                    android:maxLines="1"
+                                    android:paddingStart="10sp"
+                                    android:paddingEnd="10sp"
+                                    android:textSize="13sp"></EditText>
+
+                                <ImageView
+                                    android:alpha="0.50"
+                                    android:id="@+id/imgShowNewPassword"
+                                    android:src="@drawable/eye"
+                                    android:layout_width="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_height="match_parent"/>
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/antona_regular"
-                            android:text="First Name *"
-                            android:textColor="#545454" />
-
                         <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/text_layout">
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
-                            <EditText
-                                android:hint="Enter First Name"
-                                android:textColorHint="#9E9E9E"
-                                android:layout_width="0dp"
-                                android:layout_height="35dp"
-                                android:layout_centerHorizontal="true"
-                                android:layout_centerVertical="true"
-                                android:layout_margin="4dp"
-                                android:layout_weight="1"
-                                android:background="#F8F7FC"
-                                android:ems="10"
+                            <TextView
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:fontFamily="@font/antona_regular"
-                                android:inputType="textNoSuggestions|text"
-                                android:maxLines="1"
-                                android:paddingStart="10sp"
-                                android:paddingEnd="10sp"
-                                android:textSize="13sp"></EditText>
+                                android:text="Repeat New Password *"
+                                android:textColor="#545454" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/text_layout">
+
+                                <EditText
+                                    android:id="@+id/etRepeatPassword"
+                                    android:hint="Enter New Password Again"
+                                    android:textColorHint="#9E9E9E"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="#F8F7FC"
+                                    android:ems="10"
+                                    android:fontFamily="@font/antona_regular"
+                                    android:inputType="textPassword"
+                                    android:maxLines="1"
+                                    android:paddingStart="10sp"
+                                    android:paddingEnd="10sp"
+                                    android:textSize="13sp"></EditText>
+
+                                <ImageView
+                                    android:alpha="0.50"
+                                    android:id="@+id/imgShowRepeatPassword"
+                                    android:src="@drawable/eye"
+                                    android:layout_width="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_height="match_parent"/>
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
-
-                    </LinearLayout>-->
-
-                    <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <TextView
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/antona_regular"
-                            android:text="Email Address *"
-                            android:textColor="#545454" />
-
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/text_layout">
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
 
-                            <EditText
-                                android:id="@+id/etEmailAddress"
-                                android:hint="Enter Email Address"
-                                android:textColorHint="#9E9E9E"
-                                android:layout_width="0dp"
-                                android:layout_height="35dp"
-                                android:layout_centerHorizontal="true"
-                                android:layout_centerVertical="true"
-                                android:layout_margin="4dp"
-                                android:layout_weight="1"
-                                android:background="#F8F7FC"
-                                android:ems="10"
+                            <CheckBox
+                                android:id="@+id/chkValidation_1"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:textSize="13sp"
                                 android:fontFamily="@font/antona_regular"
-                                android:inputType="textNoSuggestions|text"
-                                android:maxLines="1"
-                                android:paddingStart="10sp"
-                                android:paddingEnd="10sp"
-                                android:textSize="13sp"></EditText>
+                                android:text="At least 8 characters long"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"/>
+
+                            <CheckBox
+                                android:id="@+id/chkValidation_2"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Require at least one lower case letter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"/>
+
+                            <CheckBox
+                                android:id="@+id/chkValidation_3"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Require at least one upper case letter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"/>
+
+                            <CheckBox
+                                android:id="@+id/chkValidation_4"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Require at least one number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"/>
+
+                            <CheckBox
+                                android:id="@+id/chkValidation_5"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Require at least one special character"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"/>
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="20dp"
+                            android:id="@+id/lnRegister"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/text_layout"
+                            android:backgroundTint="#23343C"
+                            android:gravity="center">
+
+                            <TextView
+                                android:textSize="13sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="@font/antona_regular"
+                                android:gravity="center"
+                                android:text="Register Account"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="20dp"
-                        android:id="@+id/lnRegister"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/text_layout"
-                        android:backgroundTint="#23343C"
-                        android:gravity="center">
+                </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:textSize="13sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="5dp"
-                            android:fontFamily="@font/antona_regular"
-                            android:gravity="center"
-                            android:text="Register Account"
-                            android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/lnSignIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/antona_regular"
+                        android:text="Already have an account? "
+                        android:textSize="14sp" />
 
-                    </LinearLayout>
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/antona_regular"
+                        android:text="Sign In"
+                        android:textColor="#23343C"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/lnSignIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/antona_regular"
-                    android:text="Already have an account? "
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/antona_regular"
-                    android:text="Sign In"
-                    android:textColor="#23343C"
-                    android:textSize="14sp" />
-
             </LinearLayout>
 
-        </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 

@@ -30,9 +30,55 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="Men, Mark Doe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/tvEmail"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="@font/antona_regular"
+                            android:text="markmen@gmail.com"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgExit"
+                        android:alpha="0.80"
+                        android:src="@drawable/logout"
+                        android:layout_width="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_weight="1"
@@ -42,36 +88,78 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/tvName"
+                        android:id="@+id/tvCourse"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:fontFamily="@font/antona_regular"
-                        android:text=""
+                        android:text="Bachelor of Science in Nursing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/tvCourse"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:fontFamily="@font/antona_regular"
-                        android:text=""
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="Student Number: "
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/tvStudentNumber"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="12345"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="SY: "
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/tvSchoolYear"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/antona_regular"
+                                android:text="12345"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imgExit"
-                    android:alpha="0.80"
-                    android:src="@drawable/logout"
-                    android:layout_width="30dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 

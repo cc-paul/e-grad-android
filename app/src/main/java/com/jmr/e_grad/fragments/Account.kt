@@ -20,6 +20,9 @@ class Account : Fragment() {
     private lateinit var crdChangePassword: CardView
     private lateinit var tvName: TextView
     private lateinit var tvCourse: TextView
+    private lateinit var tvEmail: TextView
+    private lateinit var tvStudentNumber: TextView
+    private lateinit var tvSchoolYear: TextView
     private lateinit var imgExit: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +39,9 @@ class Account : Fragment() {
             crdChangePassword = findViewById(R.id.crdChangePassword)
             tvName = findViewById(R.id.tvName)
             tvCourse = findViewById(R.id.tvCourse)
+            tvEmail = findViewById(R.id.tvEmail)
+            tvStudentNumber = findViewById(R.id.tvStudentNumber)
+            tvSchoolYear = findViewById(R.id.tvSchoolYear)
             imgExit = findViewById(R.id.imgExit)
         }
 
@@ -62,6 +68,9 @@ class Account : Fragment() {
         sharedHelper.apply {
             tvName.text = getString("lastName") + ", " + getString("firstName") + " " + getString("middleName")
             tvCourse.text = getString("course")
+            tvEmail.text = getString("emailAddress")
+            tvStudentNumber.text = getString("studentNumber")
+            tvSchoolYear.text = getInt("yearGraduated").toString()
         }
 
         return viewAccount
