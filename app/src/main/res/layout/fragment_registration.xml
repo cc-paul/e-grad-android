@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F8F7FC"
+    android:background="#66FA74"
     tools:context=".fragments.Registration">
 
     <LinearLayout
@@ -55,21 +55,43 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:src="@drawable/graduation_hat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:src="@drawable/campus_logo"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
+                    android:layout_gravity="center"
                     android:layout_marginStart="5dp"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:fontFamily="@font/antona_regular"
-                    android:text="E-GradNayan"
+                    android:text="Cavite State University"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"/>
+
+
+                <TextView
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="@font/antona_regular"
+                    android:text="Cavite City Campus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:backgroundTint="#ABF8BC"
                     app:cardElevation="1dp"
                     app:cardCornerRadius="10dp"
                     android:layout_margin="20dp"

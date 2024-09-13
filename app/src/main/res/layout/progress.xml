@@ -3,6 +3,7 @@
     android:padding="13dp"
     android:layout_centerHorizontal="true"
     android:layout_width="match_parent"
+    android:background="#5CFA7B"
     android:layout_height="wrap_content">
 
     <ProgressBar

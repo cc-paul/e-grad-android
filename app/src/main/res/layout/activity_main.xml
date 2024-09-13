@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#5CFA7B"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,7 +22,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:backgroundTint="#5CFA7B"
             app:cardCornerRadius="0dp"
             app:cardElevation="0dp">
 
@@ -50,7 +51,7 @@
                             <ImageView
                                 android:layout_marginTop="10dp"
                                 android:gravity="center"
-                                android:src="@drawable/graduation_hat"
+                                android:src="@drawable/campus_logo"
                                 android:layout_width="40dp"
                                 android:layout_height="match_parent"/>
 
@@ -61,7 +62,7 @@
                                 android:layout_height="match_parent"
                                 android:fontFamily="@font/antona_regular"
                                 android:gravity="center"
-                                android:text="E-GradNayan"></TextView>
+                                android:text="CVSU CCC Yearbook"></TextView>
 
                         </LinearLayout>
 
@@ -111,7 +112,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:background="@color/white"
+            android:background="#5CFA7B"
             android:weightSum="2"
             android:orientation="horizontal"
             android:layout_width="match_parent"

@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object retrofitHelper {
     private val client = OkHttpClient.Builder().build()
-    private val baseUrl = "https://apps.project4teen.online/e-grad-api/v1/"
+    private val baseUrl = "https://apps.project4teen.online/cvsu-api/v1/"
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
