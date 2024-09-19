@@ -3,15 +3,20 @@ package com.jmr.e_grad.services
 import android.util.Log
 import com.google.gson.Gson
 import com.jmr.e_grad.data.ChangePasswordData
+import com.jmr.e_grad.data.CourseData
+import com.jmr.e_grad.data.GetGraduatesResponse
 import com.jmr.e_grad.data.LoginResponse
 import com.jmr.e_grad.data.ResetPasswordData
+import com.jmr.e_grad.data.YearBookRelatedData
 import com.jmr.e_grad.data.courseResponse
 import com.jmr.e_grad.data.insertResponse
 import com.jmr.e_grad.data.loginAccountData
 import com.jmr.e_grad.data.registrationData
 import com.jmr.e_grad.`interface`.changePasswordAPI
 import com.jmr.e_grad.`interface`.createAccountAPI
+import com.jmr.e_grad.`interface`.getAllGradAPI
 import com.jmr.e_grad.`interface`.getCourseAPI
+import com.jmr.e_grad.`interface`.getCourseGradAPI
 import com.jmr.e_grad.`interface`.loginAccountAPI
 import com.jmr.e_grad.`interface`.resetPasswordAPI
 import com.jmr.e_grad.retrofitHelper
@@ -41,6 +46,58 @@ class apiServices {
                     }
 
                     onResult(course)
+                }
+            }
+        )
+    }
+
+    fun getCourseGrad(yearBookRelatedData: YearBookRelatedData, onResult: (courseResponse?) -> Unit) {
+        val retrofit = retrofitHelper.buildService(getCourseGradAPI::class.java)
+
+        retrofit.getCourseGrad(yearBookRelatedData).enqueue(
+            object : Callback<courseResponse> {
+                override fun onFailure(call: Call<courseResponse>, t: Throwable) {
+                    Log.e("Error Message",t.message.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<courseResponse>,
+                    response: Response<courseResponse>
+                ) {
+                    var course = response.body()
+
+                    if (!response.isSuccessful) {
+                        val gson = Gson()
+                        course = gson.fromJson(response.errorBody()!!.string(),courseResponse::class.java)
+                    }
+
+                    onResult(course)
+                }
+            }
+        )
+    }
+
+    fun getAllGrads(yearBookRelatedData: YearBookRelatedData, onResult: (GetGraduatesResponse?) -> Unit) {
+        val retrofit = retrofitHelper.buildService(getAllGradAPI::class.java)
+
+        retrofit.getAllGrads(yearBookRelatedData).enqueue(
+            object : Callback<GetGraduatesResponse> {
+                override fun onFailure(call: Call<GetGraduatesResponse>, t: Throwable) {
+                    Log.e("Error Message",t.message.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<GetGraduatesResponse>,
+                    response: Response<GetGraduatesResponse>
+                ) {
+                    var grads = response.body()
+
+                    if (!response.isSuccessful) {
+                        val gson = Gson()
+                        grads = gson.fromJson(response.errorBody()!!.string(),GetGraduatesResponse::class.java)
+                    }
+
+                    onResult(grads)
                 }
             }
         )

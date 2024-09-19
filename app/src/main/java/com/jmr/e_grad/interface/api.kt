@@ -1,8 +1,10 @@
 package com.jmr.e_grad.`interface`
 
 import com.jmr.e_grad.data.ChangePasswordData
+import com.jmr.e_grad.data.GetGraduatesResponse
 import com.jmr.e_grad.data.LoginResponse
 import com.jmr.e_grad.data.ResetPasswordData
+import com.jmr.e_grad.data.YearBookRelatedData
 import com.jmr.e_grad.data.courseResponse
 import com.jmr.e_grad.data.insertResponse
 import com.jmr.e_grad.data.loginAccountData
@@ -17,6 +19,20 @@ interface getCourseAPI {
     @GET("course/all-course")
     fun getCourse() : Call<courseResponse>
 }
+
+interface getCourseGradAPI {
+    @Headers("Content-Type: application/json")
+    @POST("yearbook-related")
+    fun getCourseGrad(@Body yearBookRelatedData: YearBookRelatedData) : Call<courseResponse>
+}
+
+
+interface getAllGradAPI {
+    @Headers("Content-Type: application/json")
+    @POST("yearbook-related")
+    fun getAllGrads(@Body yearBookRelatedData: YearBookRelatedData) : Call<GetGraduatesResponse>
+}
+
 
 interface createAccountAPI {
     @Headers("Content-Type: application/json")

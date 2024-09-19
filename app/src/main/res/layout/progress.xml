@@ -3,7 +3,7 @@
     android:padding="13dp"
     android:layout_centerHorizontal="true"
     android:layout_width="match_parent"
-    android:background="#5CFA7B"
+    android:background="#FFFFFF"
     android:layout_height="wrap_content">
 
     <ProgressBar
@@ -13,7 +13,7 @@
         android:layout_marginRight="15dp" />
 
     <TextView
-        android:fontFamily="@font/antona_regular"
+        android:fontFamily="@font/man_semi"
         android:layout_width="wrap_content"
         android:text="Progress Ongoing. Please wait..."
         android:textAppearance="?android:textAppearanceSmall"

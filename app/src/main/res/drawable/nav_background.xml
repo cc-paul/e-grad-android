@@ -1,0 +1,5 @@
+<!-- nav_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white" /> <!-- Or use any other solid color -->
+    <corners android:radius="0dp" /> <!-- No corner radius -->
+</shape>

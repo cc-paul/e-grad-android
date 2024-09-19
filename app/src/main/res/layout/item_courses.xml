@@ -5,7 +5,7 @@
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
     android:layout_marginBottom="5dp"
-    android:background="#5CFA7B"
+    android:background="#FFFFFF"
     android:id="@+id/lnRowCourse"
     android:layout_height="wrap_content">
 
@@ -20,7 +20,7 @@
         android:gravity="center_vertical"
         android:layout_marginStart="10dp"
         android:textStyle="bold"
-        android:fontFamily="@font/antona_regular"
+        android:fontFamily="@font/man_reg"
         android:text="Bachelor of Science in Information Technology"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

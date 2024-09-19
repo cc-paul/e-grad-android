@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#83F873"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.Login">
 
@@ -32,10 +32,10 @@
 
                 <TextView
                     android:layout_marginStart="5dp"
-                    android:textSize="16sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:fontFamily="@font/antona_regular"
+                    android:fontFamily="@font/man_semi"
                     android:text="Exit Application"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"/>
@@ -56,8 +56,8 @@
                 android:layout_height="200dp"/>
 
             <androidx.cardview.widget.CardView
-                android:backgroundTint="#83F873"
-                app:cardElevation="0dp"
+                android:backgroundTint="#EAC969"
+                app:cardElevation="2dp"
                 app:cardCornerRadius="10dp"
                 android:layout_margin="20dp"
                 android:layout_width="match_parent"
@@ -69,12 +69,13 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:layout_marginTop="10dp"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:fontFamily="@font/antona_regular"
+                        android:fontFamily="@font/man_semi"
                         android:text="Cavite State University"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
@@ -84,10 +85,10 @@
                         android:layout_marginBottom="20dp"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
-                        android:textSize="18sp"
+                        android:textSize="13sp"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:fontFamily="@font/antona_regular"
+                        android:fontFamily="@font/man_reg"
                         android:text="Cavite City Campus"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
@@ -110,7 +111,7 @@
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:fontFamily="@font/antona_regular"
+                            android:fontFamily="@font/man_reg"
                             android:text="Student Number *"
                             android:textColor="#545454" />
 
@@ -132,7 +133,7 @@
                                 android:layout_weight="1"
                                 android:background="#F8F7FC"
                                 android:ems="10"
-                                android:fontFamily="@font/antona_regular"
+                                android:fontFamily="@font/man_reg"
                                 android:inputType="textNoSuggestions|text"
                                 android:maxLines="1"
                                 android:paddingStart="10sp"
@@ -167,7 +168,7 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:fontFamily="@font/antona_regular"
+                                android:fontFamily="@font/man_reg"
                                 android:text="Password *"
                                 android:textColor="#545454" />
 
@@ -179,9 +180,9 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:fontFamily="@font/antona_regular"
+                                android:fontFamily="@font/man_reg"
                                 android:text="I forgot my Password"
-                                android:textColor="#00116E" />
+                                android:textColor="#3E580C" />
 
                         </LinearLayout>
 
@@ -203,7 +204,7 @@
                                 android:layout_weight="1"
                                 android:background="#F8F7FC"
                                 android:ems="10"
-                                android:fontFamily="@font/antona_regular"
+                                android:fontFamily="@font/man_reg"
                                 android:inputType="textPassword"
                                 android:maxLines="1"
                                 android:paddingStart="10sp"
@@ -226,13 +227,13 @@
                     <LinearLayout
                         android:layout_marginStart="15dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginBottom="30dp"
                         android:id="@+id/lnLogin"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/text_layout"
-                        android:backgroundTint="#13C830"
+                        android:backgroundTint="#3E580C"
                         android:gravity="center">
 
                         <TextView
@@ -240,7 +241,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="5dp"
-                            android:fontFamily="@font/antona_regular"
+                            android:fontFamily="@font/man_bold"
                             android:gravity="center"
                             android:text="Login"
                             android:textColor="@color/white" />
@@ -263,7 +264,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/antona_regular"
+                    android:fontFamily="@font/man_reg"
                     android:text="Dont have an Account? "
                     android:textSize="14sp" />
 
@@ -271,9 +272,9 @@
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/antona_regular"
+                    android:fontFamily="@font/man_reg"
                     android:text="Create Here"
-                    android:textColor="#23343C"
+                    android:textColor="#3E580C"
                     android:textSize="14sp" />
 
             </LinearLayout>

@@ -33,5 +33,6 @@ class Constants {
         const val BOTTOM_DIALOG = "ModalBottomSheet"
         const val YEARBOOK_FRAGMENT = "YearbookFragment"
         const val ACCOUNT_FRAGMENT = "AccountFragment"
+        const val YEARBOOKDETAILS_FRAGMENT = "YearBookDetailsFragment"
     }
 }

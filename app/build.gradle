@@ -66,4 +66,7 @@ dependencies {
     //Accordion
     implementation 'com.google.android.material:material:1.0.0'
 
+    //Interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
 }

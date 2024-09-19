@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".LoginActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3sp"
+        android:background="#3E580C" />
 
     <FrameLayout
         android:id="@+id/frLogin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>

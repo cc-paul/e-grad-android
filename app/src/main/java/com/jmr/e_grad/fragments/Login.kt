@@ -147,6 +147,12 @@ class Login : Fragment() {
             bottomPasswordReset.show(requireActivity().supportFragmentManager, BOTTOM_DIALOG)
         }
 
+        tvForgotPassword.setOnLongClickListener {
+            val bottomChangePassword = BottomChangePassword()
+            bottomChangePassword.show(requireActivity().supportFragmentManager, BOTTOM_DIALOG)
+            true
+        }
+
         return loginView
     }
 }

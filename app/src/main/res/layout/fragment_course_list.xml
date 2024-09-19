@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#5CFA7B"
+    android:background="#FFFFFF"
     tools:context=".fragments.CourseList">
 
     <LinearLayout
@@ -26,10 +26,10 @@
 
             <TextView
                 android:layout_marginStart="5dp"
-                android:textSize="16sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:fontFamily="@font/antona_regular"
+                android:fontFamily="@font/man_reg"
                 android:text="Back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"/>
@@ -60,7 +60,7 @@
             android:layout_weight="1"
             android:background="#F8F7FC"
             android:ems="10"
-            android:fontFamily="@font/antona_regular"
+            android:fontFamily="@font/man_reg"
             android:inputType="textNoSuggestions|text"
             android:maxLines="1"
             android:paddingStart="10sp"
@@ -77,6 +77,8 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:id="@+id/rvCourses"
         tools:listitem="@layout/item_courses"
         android:layout_width="match_parent"
