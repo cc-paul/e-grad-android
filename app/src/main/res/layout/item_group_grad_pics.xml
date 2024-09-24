@@ -6,29 +6,56 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/text_layout"
-        android:backgroundTint="#3E580C"
-        android:gravity="center">
+<!--    <LinearLayout-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/text_layout"-->
+<!--        android:backgroundTint="#3E580C"-->
+<!--        android:gravity="center">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvLetter"-->
+<!--            android:textSize="13sp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:fontFamily="@font/man_bold"-->
+<!--            android:gravity="center"-->
+<!--            android:text="A"-->
+<!--            android:textColor="@color/white" />-->
+
+
+<!--    </LinearLayout>-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:src="@drawable/icn_divider"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/tvLetter"
-            android:textSize="13sp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="@font/man_bold"
             android:gravity="center"
             android:text="A"
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
 
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGraduatePics"

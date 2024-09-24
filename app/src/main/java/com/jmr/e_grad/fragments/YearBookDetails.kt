@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.jmr.e_grad.Constants.Companion.REGISTRATION_FRAGMENT
+import com.jmr.e_grad.MainActivity
 import com.jmr.e_grad.R
 import com.jmr.e_grad.data.CourseResponseData
 import com.jmr.e_grad.data.YearBookRelatedData
@@ -29,7 +30,7 @@ import com.jmr.e_grad.recycleview.data.getGradItem
 import com.jmr.e_grad.services.apiServices
 import com.jmr.e_grad.services.utils
 
-class YearBookDetails : Fragment() {
+class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
     lateinit var etSearch: EditText
     lateinit var rvCourses: RecyclerView
     lateinit var rvGraduatePics: RecyclerView
@@ -96,9 +97,11 @@ class YearBookDetails : Fragment() {
                         }
                     }
 
-                    courseHorizontalAdapter = courseHorizontalAdapter(this,courseList)
-                    rvCourses.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-                    rvCourses.adapter = courseHorizontalAdapter
+                    if (mainActivity.checkIfCurrentFragment(this)) {
+                        courseHorizontalAdapter = courseHorizontalAdapter(this,courseList)
+                        rvCourses.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+                        rvCourses.adapter = courseHorizontalAdapter
+                    }
                 }
             }
         }
@@ -127,9 +130,11 @@ class YearBookDetails : Fragment() {
                         }
                     }
 
-                    gradsAdapter = gradsAdapter(gradList)
-                    rvGraduatePics.layoutManager = LinearLayoutManager(requireContext())
-                    rvGraduatePics.adapter = gradsAdapter
+                    if (mainActivity.checkIfCurrentFragment(this)) {
+                        gradsAdapter = gradsAdapter(gradList)
+                        rvGraduatePics.layoutManager = LinearLayoutManager(requireContext())
+                        rvGraduatePics.adapter = gradsAdapter
+                    }
                 }
             }
 

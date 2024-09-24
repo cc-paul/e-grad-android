@@ -13,18 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:fontFamily="@font/man_bold"
-            android:text="Account Settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
         <androidx.cardview.widget.CardView
-            android:visibility="gone"
             app:cardElevation="2dp"
+            android:backgroundTint="#EAC969"
             app:cardCornerRadius="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="3dp"
@@ -44,12 +35,13 @@
 
                     <LinearLayout
                         android:layout_weight="1"
-                        android:layout_margin="15dp"
+                        android:layout_margin="10dp"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:textColor="#3E580C"
                             android:id="@+id/tvName"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -60,6 +52,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:textColor="#3E580C"
                             android:id="@+id/tvEmail"
                             android:ellipsize="end"
                             android:singleLine="true"
@@ -85,12 +78,13 @@
 
                 <LinearLayout
                     android:layout_weight="1"
-                    android:layout_margin="15dp"
+                    android:layout_margin="10dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:textColor="#3E580C"
                         android:id="@+id/tvCourse"
                         android:textSize="15sp"
                         android:textStyle="bold"
@@ -112,6 +106,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:textColor="#3E580C"
                                 android:ellipsize="end"
                                 android:singleLine="true"
                                 android:textSize="13sp"
@@ -122,6 +117,7 @@
                                 android:layout_height="wrap_content"/>
 
                             <TextView
+                                android:textColor="#3E580C"
                                 android:id="@+id/tvStudentNumber"
                                 android:ellipsize="end"
                                 android:singleLine="true"
@@ -139,6 +135,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:textColor="#3E580C"
                                 android:ellipsize="end"
                                 android:singleLine="true"
                                 android:textSize="13sp"
@@ -149,6 +146,7 @@
                                 android:layout_height="wrap_content"/>
 
                             <TextView
+                                android:textColor="#3E580C"
                                 android:id="@+id/tvSchoolYear"
                                 android:ellipsize="end"
                                 android:singleLine="true"
@@ -167,6 +165,17 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="@font/man_bold"
+            android:text="Account Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_marginTop="5dp"

@@ -14,4 +14,21 @@
         <item name="android:background">@drawable/rounded_dialog</item>
     </style>
 
+    <style name="BottomNavTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:fontFamily">@font/man_semi</item> <!-- Use a custom font if needed -->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#EAC969</item>
+        <item name="android:textColor">@color/nav_item_color_selector</item>
+    </style>
+
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">#EAC969</item>
+        <item name="android:textColorSecondary">@color/nav_item_color_selector</item>
+    </style>
+
+    <style name="Theme.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/yellow</item>
+    </style>
+
 </resources>

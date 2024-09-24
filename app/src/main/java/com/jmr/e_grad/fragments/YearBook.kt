@@ -19,7 +19,6 @@ import com.jmr.e_grad.helper.sharedHelper.getInt
 
 class YearBook : Fragment() {
     lateinit var imgYearBookCover: ImageView
-    lateinit var lnProceed: LinearLayout
 
     private var link :String = ""
 
@@ -35,17 +34,10 @@ class YearBook : Fragment() {
 
         yearBookView.apply {
             imgYearBookCover = findViewById(R.id.imgYearBookCover)
-            lnProceed = findViewById(R.id.lnProceed)
         }
 
         loadCover()
 
-        lnProceed.setOnClickListener {
-            val yearBookFrag = YearBookDetails()
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.frMain, yearBookFrag)
-                .commit()
-        }
 
         return yearBookView
     }
