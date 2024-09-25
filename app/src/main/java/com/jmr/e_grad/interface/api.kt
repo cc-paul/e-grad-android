@@ -1,8 +1,10 @@
 package com.jmr.e_grad.`interface`
 
+import com.jmr.e_grad.data.AwardeeResponse
 import com.jmr.e_grad.data.ChangePasswordData
 import com.jmr.e_grad.data.GetGraduatesResponse
 import com.jmr.e_grad.data.LoginResponse
+import com.jmr.e_grad.data.MediaResponse
 import com.jmr.e_grad.data.ResetPasswordData
 import com.jmr.e_grad.data.YearBookRelatedData
 import com.jmr.e_grad.data.courseResponse
@@ -56,4 +58,16 @@ interface resetPasswordAPI {
     @Headers("Content-Type: application/json")
     @POST("account/accounts-related")
     fun resetPassword(@Body requestBody: ResetPasswordData) : Call<insertResponse>
+}
+
+interface getAwardeeAPI {
+    @Headers("Content-Type: application/json")
+    @POST("yearbook-related")
+    fun getAwardee(@Body requestBody: YearBookRelatedData) : Call<AwardeeResponse>
+}
+
+interface getMediaAPI {
+    @Headers("Content-Type: application/json")
+    @POST("yearbook-related")
+    fun getMedia(@Body requestBody: YearBookRelatedData) : Call<MediaResponse>
 }

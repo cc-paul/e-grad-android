@@ -34,6 +34,7 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
     lateinit var etSearch: EditText
     lateinit var rvCourses: RecyclerView
     lateinit var rvGraduatePics: RecyclerView
+    lateinit var yearBookDetailsView:View
 
     private val courseList  = ArrayList<courseItem>()
     private val gradList = ArrayList<getGradItem>()
@@ -53,7 +54,7 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val yearBookDetailsView: View = inflater.inflate(R.layout.fragment_year_book_details, container, false)
+        yearBookDetailsView = inflater.inflate(R.layout.fragment_year_book_details, container, false)
 
         yearBookDetailsView.apply {
             etSearch = findViewById(R.id.etSearch)
@@ -62,7 +63,6 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
         }
 
         getCourses()
-        loadAllGrads()
 
         etSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
@@ -82,6 +82,8 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
                 schoolYear = getInt("yearGraduated")
             )
 
+            mainActivity.allowSwitching = false
+
             apiServices.getCourseGrad(yearBookRelatedData) {
                 if (it!!.success) {
                     val courseListResponse = it.data
@@ -97,11 +99,11 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
                         }
                     }
 
-                    if (mainActivity.checkIfCurrentFragment(this)) {
-                        courseHorizontalAdapter = courseHorizontalAdapter(this,courseList)
-                        rvCourses.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-                        rvCourses.adapter = courseHorizontalAdapter
-                    }
+                    courseHorizontalAdapter = courseHorizontalAdapter(this,courseList)
+                    rvCourses.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+                    rvCourses.adapter = courseHorizontalAdapter
+
+                    loadAllGrads()
                 }
             }
         }
@@ -130,14 +132,13 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
                         }
                     }
 
-                    if (mainActivity.checkIfCurrentFragment(this)) {
-                        gradsAdapter = gradsAdapter(gradList)
-                        rvGraduatePics.layoutManager = LinearLayoutManager(requireContext())
-                        rvGraduatePics.adapter = gradsAdapter
-                    }
+                    gradsAdapter = gradsAdapter(gradList)
+                    rvGraduatePics.layoutManager = LinearLayoutManager(requireContext())
+                    rvGraduatePics.adapter = gradsAdapter
                 }
-            }
 
+                mainActivity.allowSwitching = true
+            }
         }
     }
 }

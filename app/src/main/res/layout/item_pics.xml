@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="0dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp">
+
+            <ImageView
+                android:id="@+id/imgEventPic"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sample_event"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgPlayVideo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/play_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/lnDescription"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_layout"
+                    android:backgroundTint="#EAC969"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvDescription"
+                        android:textSize="11sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/man_reg"
+                        android:gravity="center|left"
+                        android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less"
+                        android:textColor="#444444" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

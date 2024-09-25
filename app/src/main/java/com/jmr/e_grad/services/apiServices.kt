@@ -2,10 +2,12 @@ package com.jmr.e_grad.services
 
 import android.util.Log
 import com.google.gson.Gson
+import com.jmr.e_grad.data.AwardeeResponse
 import com.jmr.e_grad.data.ChangePasswordData
 import com.jmr.e_grad.data.CourseData
 import com.jmr.e_grad.data.GetGraduatesResponse
 import com.jmr.e_grad.data.LoginResponse
+import com.jmr.e_grad.data.MediaResponse
 import com.jmr.e_grad.data.ResetPasswordData
 import com.jmr.e_grad.data.YearBookRelatedData
 import com.jmr.e_grad.data.courseResponse
@@ -15,8 +17,10 @@ import com.jmr.e_grad.data.registrationData
 import com.jmr.e_grad.`interface`.changePasswordAPI
 import com.jmr.e_grad.`interface`.createAccountAPI
 import com.jmr.e_grad.`interface`.getAllGradAPI
+import com.jmr.e_grad.`interface`.getAwardeeAPI
 import com.jmr.e_grad.`interface`.getCourseAPI
 import com.jmr.e_grad.`interface`.getCourseGradAPI
+import com.jmr.e_grad.`interface`.getMediaAPI
 import com.jmr.e_grad.`interface`.loginAccountAPI
 import com.jmr.e_grad.`interface`.resetPasswordAPI
 import com.jmr.e_grad.retrofitHelper
@@ -206,6 +210,60 @@ class apiServices {
                     }
 
                     onResult(resetPassword)
+                }
+            }
+        )
+    }
+
+    fun getAwardee(yearBookRelatedData: YearBookRelatedData, onResult: (AwardeeResponse?) -> Unit) {
+        val retrofit = retrofitHelper.buildService(getAwardeeAPI::class.java)
+
+        retrofit.getAwardee(yearBookRelatedData).enqueue(
+            object : Callback<AwardeeResponse> {
+                override fun onFailure(call: Call<AwardeeResponse>, t: Throwable) {
+                    Log.e("Error Message",t.message.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<AwardeeResponse>,
+                    response: Response<AwardeeResponse>
+                ) {
+                    var awardee = response.body()
+                    Log.e("Current JSON Body",awardee.toString())
+
+                    if (!response.isSuccessful) {
+                        val gson = Gson()
+                        awardee = gson.fromJson(response.errorBody()!!.string(),AwardeeResponse::class.java)
+                    }
+
+                    onResult(awardee)
+                }
+            }
+        )
+    }
+
+    fun getMedia(yearBookRelatedData: YearBookRelatedData, onResult: (MediaResponse?) -> Unit) {
+        val retrofit = retrofitHelper.buildService(getMediaAPI::class.java)
+
+        retrofit.getMedia(yearBookRelatedData).enqueue(
+            object : Callback<MediaResponse> {
+                override fun onFailure(call: Call<MediaResponse>, t: Throwable) {
+                    Log.e("Error Message",t.message.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<MediaResponse>,
+                    response: Response<MediaResponse>
+                ) {
+                    var media = response.body()
+                    Log.e("Current JSON Body",media.toString())
+
+                    if (!response.isSuccessful) {
+                        val gson = Gson()
+                        media = gson.fromJson(response.errorBody()!!.string(),MediaResponse::class.java)
+                    }
+
+                    onResult(media)
                 }
             }
         )

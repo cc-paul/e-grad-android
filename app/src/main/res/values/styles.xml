@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
 
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/rounded_dialog</item>
     </style>
 
@@ -29,6 +28,15 @@
 
     <style name="Theme.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/yellow</item>
+    </style>
+
+    <style name="Widget.Theme.EGrad.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.EGrad.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
 </resources>

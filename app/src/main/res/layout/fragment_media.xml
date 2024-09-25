@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.Media">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/lnGallery"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/man_semi"
+                    android:gravity="center"
+                    android:layout_margin="15dp"
+                    android:text="Gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/lnGallerySelector"
+                    android:background="#3E580C"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnVideos"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/man_semi"
+                    android:gravity="center"
+                    android:layout_margin="15dp"
+                    android:text="Videos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/lnVideosSelector"
+                    android:visibility="invisible"
+                    android:background="#3E580C"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEventPics"
+            tools:listitem="@layout/item_pics"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</FrameLayout>

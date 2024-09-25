@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/awardee_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgGradPic"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:src="@drawable/sample_grad"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:padding="2dp"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_layout"
+                android:backgroundTint="#EAC969"
+                android:gravity="center|bottom">
+
+                <TextView
+                    android:id="@+id/tvFullName"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="13sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/man_bold"
+                    android:gravity="center"
+                    android:text="Mark Men Doe"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvAwardName"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/man_reg"
+                    android:gravity="center"
+                    android:text="Magna Cum Laude"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
