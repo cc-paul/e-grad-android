@@ -1,5 +1,6 @@
 package com.jmr.e_grad.`interface`
 
+import com.jmr.e_grad.data.AchievementResponse
 import com.jmr.e_grad.data.AwardeeResponse
 import com.jmr.e_grad.data.ChangePasswordData
 import com.jmr.e_grad.data.GetGraduatesResponse
@@ -70,4 +71,10 @@ interface getMediaAPI {
     @Headers("Content-Type: application/json")
     @POST("yearbook-related")
     fun getMedia(@Body requestBody: YearBookRelatedData) : Call<MediaResponse>
+}
+
+interface getAchievementAPI {
+    @Headers("Content-Type: application/json")
+    @POST("yearbook-related")
+    fun getAchievement(@Body requestBody: YearBookRelatedData) : Call<AchievementResponse>
 }

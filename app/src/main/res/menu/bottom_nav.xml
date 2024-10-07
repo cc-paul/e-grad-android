@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/navHome" android:title="Home" android:icon="@drawable/icn_home" />
-    <item android:id="@+id/navAwardee" android:title="Awardees" android:icon="@drawable/icn_medal"  />
-    <item android:id="@+id/navYearBook" android:title="Yearbook" android:icon="@drawable/icn_graduate" />
-    <item android:id="@+id/navCover" android:title="Cover" android:icon="@drawable/icn_open_book" />
-    <item android:id="@+id/navProfile" android:title="Profile" android:icon="@drawable/icn_user" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/icn_home"
+        android:title="Home" />
+
+
+    <item
+        android:id="@+id/navCover"
+        android:icon="@drawable/icn_open_book"
+        android:title="Cover" />
+
+
+    <item
+        android:id="@+id/navYearBook"
+        android:icon="@drawable/icn_graduate"
+        android:title="Yearbook" />
+
+
+    <item
+        android:id="@+id/navAwardee"
+        android:icon="@drawable/icn_medal"
+        android:title="Awardees" />
+
+
+    <item
+        android:id="@+id/navProfile"
+        android:icon="@drawable/icn_user"
+        android:title="Profile" />
 </menu>

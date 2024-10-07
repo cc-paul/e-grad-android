@@ -12,5 +12,7 @@ data class getPicItem(
     val studentId: Int = 0,
     val fullName: String = "",
     val gradPicFileName: String,
-    val folderName: String
+    val folderName: String,
+    val studentNumber: String,
+    val totalAchievement: Int
 )

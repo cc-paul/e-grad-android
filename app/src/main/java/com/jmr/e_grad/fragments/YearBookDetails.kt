@@ -132,7 +132,7 @@ class YearBookDetails(private val mainActivity: MainActivity) : Fragment() {
                         }
                     }
 
-                    gradsAdapter = gradsAdapter(gradList)
+                    gradsAdapter = gradsAdapter(mainActivity,gradList)
                     rvGraduatePics.layoutManager = LinearLayoutManager(requireContext())
                     rvGraduatePics.adapter = gradsAdapter
                 }

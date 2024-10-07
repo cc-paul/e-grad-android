@@ -163,6 +163,7 @@
                                         android:fontFamily="@font/man_reg"
                                         android:hint="Enter Student Number"
                                         android:inputType="number"
+                                        android:maxLength="9"
                                         android:maxLines="1"
                                         android:paddingStart="10sp"
                                         android:paddingEnd="10sp"

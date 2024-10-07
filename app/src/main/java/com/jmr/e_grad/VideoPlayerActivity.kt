@@ -3,6 +3,7 @@ package com.jmr.e_grad
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +17,8 @@ import com.jmr.e_grad.databinding.ActivityVideoPlayerBinding
 
 class VideoPlayerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityVideoPlayerBinding
+    private lateinit var lnBack: LinearLayout
+
     private var exoPlayer: ExoPlayer? = null
     private var playbackPosition = 0L
     private var playWhenReady = true
@@ -28,6 +31,7 @@ class VideoPlayerActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         enableEdgeToEdge()
 
         val mainView = findViewById<View>(R.id.main)
@@ -39,8 +43,13 @@ class VideoPlayerActivity : AppCompatActivity() {
             }
         }
 
+        lnBack = findViewById(R.id.lnBack)
         videoLink = intent.getStringExtra("videoLink").toString()
-        Log.e("My Current Link",videoLink)
+
+        lnBack.setOnClickListener {
+            finish()
+        }
+
         preparePlayer()
     }
 

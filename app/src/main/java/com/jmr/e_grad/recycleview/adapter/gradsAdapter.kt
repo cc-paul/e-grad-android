@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.jmr.e_grad.MainActivity
 import com.jmr.e_grad.R
 import com.jmr.e_grad.fragments.CourseList
 import com.jmr.e_grad.`interface`.dataTransfer
@@ -16,6 +17,7 @@ import com.jmr.e_grad.recycleview.data.getGradItem
 import com.jmr.e_grad.recycleview.data.getPicItem
 
 class gradsAdapter(
+    private var mainActivity: MainActivity,
     private var items: ArrayList<getGradItem>
     ) : RecyclerView.Adapter<gradsAdapter.ViewHolder>() {
     private var gradsPicAdapter: gradsPicAdapter? = null
@@ -39,12 +41,14 @@ class gradsAdapter(
                         studentId,
                         fullName,
                         gradPicFileName,
-                        folderName
+                        folderName,
+                        studentNumber,
+                        totalAchievement
                     ))
                 }
             }
 
-            gradsPicAdapter = gradsPicAdapter(gradList)
+            gradsPicAdapter = gradsPicAdapter(mainActivity,gradList)
             rvGraduatePics.layoutManager = GridLayoutManager(itemView.context, 3)
             rvGraduatePics.adapter = gradsPicAdapter
         }

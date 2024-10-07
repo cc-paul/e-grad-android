@@ -21,5 +21,7 @@ data class Graduate(
     val studentId: Int,
     val fullName: String,
     val gradPicFileName: String,
-    val folderName: String
+    val folderName: String,
+    val studentNumber: String,
+    val totalAchievement: Int
 )

@@ -86,7 +86,7 @@ class Login : Fragment() {
         }
 
         lnLogin.setOnLongClickListener {
-            etStudentNumber.setText("12345")
+            etStudentNumber.setText("123451133")
             etPassword.setText("P@gente082993")
             lnLogin.performClick()
 
