@@ -2,6 +2,7 @@ package com.jmr.e_grad.services
 
 import android.util.Log
 import com.google.gson.Gson
+import com.jmr.e_grad.data.AchievementResponse
 import com.jmr.e_grad.data.AwardeeResponse
 import com.jmr.e_grad.data.ChangePasswordData
 import com.jmr.e_grad.data.CourseData
@@ -16,6 +17,7 @@ import com.jmr.e_grad.data.loginAccountData
 import com.jmr.e_grad.data.registrationData
 import com.jmr.e_grad.`interface`.changePasswordAPI
 import com.jmr.e_grad.`interface`.createAccountAPI
+import com.jmr.e_grad.`interface`.getAchievementAPI
 import com.jmr.e_grad.`interface`.getAllGradAPI
 import com.jmr.e_grad.`interface`.getAwardeeAPI
 import com.jmr.e_grad.`interface`.getCourseAPI
@@ -264,6 +266,33 @@ class apiServices {
                     }
 
                     onResult(media)
+                }
+            }
+        )
+    }
+
+    fun getAchievement(yearBookRelatedData: YearBookRelatedData, onResult: (AchievementResponse?) -> Unit) {
+        val retrofit = retrofitHelper.buildService(getAchievementAPI::class.java)
+
+        retrofit.getAchievement(yearBookRelatedData).enqueue(
+            object : Callback<AchievementResponse> {
+                override fun onFailure(call: Call<AchievementResponse>, t: Throwable) {
+                    Log.e("Error Message",t.message.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<AchievementResponse>,
+                    response: Response<AchievementResponse>
+                ) {
+                    var achievement = response.body()
+                    Log.e("Current JSON Body",achievement.toString())
+
+                    if (!response.isSuccessful) {
+                        val gson = Gson()
+                        achievement = gson.fromJson(response.errorBody()!!.string(),AchievementResponse::class.java)
+                    }
+
+                    onResult(achievement)
                 }
             }
         )

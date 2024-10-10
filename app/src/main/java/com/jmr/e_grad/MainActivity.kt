@@ -14,12 +14,23 @@ import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
+import com.jmr.e_grad.Constants.Companion.BOTTOM_DIALOG
+import com.jmr.e_grad.data.YearBookRelatedData
 import com.jmr.e_grad.fragments.Account
 import com.jmr.e_grad.fragments.Awardee
+import com.jmr.e_grad.fragments.BottomAchievement
+import com.jmr.e_grad.fragments.BottomChangePassword
 import com.jmr.e_grad.fragments.Media
 import com.jmr.e_grad.fragments.YearBook
 import com.jmr.e_grad.fragments.YearBookDetails
+import com.jmr.e_grad.helper.sharedHelper.getInt
+import com.jmr.e_grad.recycleview.adapter.gradsAdapter
+import com.jmr.e_grad.recycleview.data.achievementPassItem
+import com.jmr.e_grad.recycleview.data.getGradItem
+import com.jmr.e_grad.services.apiServices
 import com.jmr.e_grad.services.utils
 import java.io.File
 
@@ -28,6 +39,8 @@ class MainActivity : AppCompatActivity() {
     var allowSwitching = true
 
     private val utils = utils()
+    private val apiServices = apiServices()
+    private val gson = Gson()
 
     private var currentDownloadId: Long = -1
     private var downloadHandler: Handler? = null
@@ -158,6 +171,30 @@ class MainActivity : AppCompatActivity() {
 
         } catch (e: Exception) {
             utils.showToastMessage(this, "Image download failed")
+        }
+    }
+
+    fun getAchievement(achievementPassItem: ArrayList<achievementPassItem>) {
+        if (utils.hasInternet(this)) {
+            utils.showProgress(this)
+
+            val yearBookRelatedData = YearBookRelatedData(
+                mode = "get_achievement",
+                studentNumber = achievementPassItem[0].studentNumber
+            )
+
+            apiServices.getAchievement(yearBookRelatedData) {
+                if (it!!.success) {
+                    val achievementResponse = it.data
+                    val achievement = achievementResponse.achievement
+                    val bottomAchievement = BottomAchievement(achievement,achievementPassItem)
+
+                    utils.closeProgress()
+                    bottomAchievement.show(this.supportFragmentManager, BOTTOM_DIALOG)
+                }
+            }
+        } else {
+            utils.showToastMessage(this,"Unable to load data. Please connect to the internet")
         }
     }
 }

@@ -19,6 +19,7 @@ import com.jmr.e_grad.helper.linkHelper
 import com.jmr.e_grad.helper.sharedHelper
 import com.jmr.e_grad.helper.sharedHelper.getInt
 import com.jmr.e_grad.`interface`.dataTransfer
+import com.jmr.e_grad.recycleview.data.achievementPassItem
 import com.jmr.e_grad.recycleview.data.courseItem
 import com.jmr.e_grad.recycleview.data.getGradItem
 import com.jmr.e_grad.recycleview.data.getPicItem
@@ -69,7 +70,14 @@ class gradsPicAdapter(
                         link
                     )
                 } else if (id == 1) {
+                    val achievementPassItem = ArrayList<achievementPassItem>()
 
+                    achievementPassItem.add(achievementPassItem(
+                        studentNumber = item.studentNumber,
+                        imageLink = link
+                    ))
+
+                    mainActivity.getAchievement(achievementPassItem)
                 }
 
                 false
