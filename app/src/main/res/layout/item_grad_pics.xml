@@ -33,12 +33,14 @@
                     android:layout_height="match_parent"/>
 
                 <ImageView
+                    android:visibility="invisible"
                     android:src="@drawable/border"
                     android:scaleType="centerCrop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
                 <androidx.cardview.widget.CardView
+                    android:visibility="invisible"
                     android:id="@+id/crdMore"
                     android:layout_margin="10dp"
                     android:elevation="10dp"

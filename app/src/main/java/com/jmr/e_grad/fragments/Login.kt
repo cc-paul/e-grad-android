@@ -25,6 +25,13 @@ import com.jmr.e_grad.data.loginAccountData
 import com.jmr.e_grad.helper.sharedHelper
 import com.jmr.e_grad.services.apiServices
 import com.jmr.e_grad.services.utils
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.util.Timer
+import java.util.logging.Handler
+import kotlin.concurrent.schedule
 import kotlin.system.exitProcess
 
 class Login : Fragment() {
@@ -36,12 +43,11 @@ class Login : Fragment() {
     private lateinit var etPassword: EditText
     private lateinit var imgShowPassword: ImageView
     private lateinit var tvForgotPassword: TextView
+    private lateinit var lnLoginForm: LinearLayout
+    private lateinit var lnLoading: LinearLayout
 
     private val apiServices = apiServices()
     private val utils = utils()
-    private val gson = Gson()
-
-    private var snackDuration: Int = Snackbar.LENGTH_LONG
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,6 +63,8 @@ class Login : Fragment() {
             etPassword = findViewById(R.id.etPassword)
             imgShowPassword = findViewById(R.id.imgShowPassword)
             tvForgotPassword = findViewById(R.id.tvForgotPassword)
+            lnLoginForm = findViewById(R.id.lnLoginForm)
+            lnLoading = findViewById(R.id.lnLoading)
         }
 
         lnExit.setOnClickListener {
@@ -94,50 +102,57 @@ class Login : Fragment() {
         }
 
         lnLogin.setOnClickListener {
-            utils.showProgress(requireContext())
+            if (utils.hasInternet(requireContext())) {
+                utils.showProgress(requireContext())
 
-            val loginAccountData = loginAccountData(
-                studentNumber = etStudentNumber.text.toString(),
-                password = etPassword.text.toString()
-            )
+                val loginAccountData = loginAccountData(
+                    studentNumber = etStudentNumber.text.toString(),
+                    password = etPassword.text.toString()
+                )
 
-            apiServices.loginAccount(loginAccountData) {
-                utils.closeProgress()
+                apiServices.loginAccount(loginAccountData) {
+                    utils.closeProgress()
 
-                if (it!!.success) {
-                    val login = it.data.login.firstOrNull()
+                    if (it!!.success) {
+                        val login = it.data.login.firstOrNull()
 
-                    etStudentNumber.text.clear()
-                    etPassword.text.clear()
-
-                    login?.apply {
-                        sharedHelper.apply {
-                            putInt("id", id)
-                            putString("studentNumber", studentNumber)
-                            putInt("yearGraduated", yearGraduated)
-                            putInt("courseId", courseId)
-                            putString("firstName", firstName)
-                            putString("middleName", middleName)
-                            putString("lastName", lastName)
-                            putString("emailAddress", emailAddress)
-                            putString("isPasswordChanged", isPasswordChanged)
-                            putString("course", course)
-                            putInt("showTitle",1)
-                        }
-
-                        if (isPasswordChanged == 0.toString()) {
-                            val bottomChangePassword = BottomChangePassword()
-                            bottomChangePassword.show(requireActivity().supportFragmentManager, BOTTOM_DIALOG)
-                        } else {
-                            activity?.let{
-                                val intent = Intent (it, MainActivity::class.java)
-                                it.startActivity(intent)
+                        login?.apply {
+                            sharedHelper.apply {
+                                putInt("id", id)
+                                putString("studentNumber", studentNumber)
+                                putInt("yearGraduated", yearGraduated)
+                                putInt("courseId", courseId)
+                                putString("firstName", firstName)
+                                putString("middleName", middleName)
+                                putString("lastName", lastName)
+                                putString("emailAddress", emailAddress)
+                                putString("isPasswordChanged", isPasswordChanged)
+                                putString("course", course)
+                                putInt("showTitle",1)
                             }
-                            activity?.finish()
+
+                            if (isPasswordChanged == 0.toString()) {
+                                val bottomChangePassword = BottomChangePassword()
+                                bottomChangePassword.show(requireActivity().supportFragmentManager, BOTTOM_DIALOG)
+                            } else {
+                                sharedHelper.apply {
+                                    putString("logUsername",etStudentNumber.text.toString())
+                                    putString("logPassword",etPassword.text.toString())
+                                    putInt("isLoggedInOneTime",1)
+                                }
+
+                                activity?.let{
+                                    val intent = Intent (it, MainActivity::class.java)
+                                    it.startActivity(intent)
+                                }
+                                activity?.finish()
+                            }
                         }
+                    } else {
+                        etStudentNumber.text.clear()
+                        etPassword.text.clear()
+                        utils.showToastMessage(requireContext(),it?.messages?.get(0).toString())
                     }
-                } else {
-                    utils.showToastMessage(requireContext(),it?.messages?.get(0).toString())
                 }
             }
         }
@@ -153,6 +168,24 @@ class Login : Fragment() {
             true
         }
 
+
+        checkOneTime()
+
         return loginView
+    }
+
+    private fun checkOneTime() {
+        sharedHelper.apply {
+            val isLoggedInOneTime: Boolean = getInt("isLoggedInOneTime",0) == 1
+
+            if (isLoggedInOneTime) {
+                etStudentNumber.setText(getString("logUsername",""))
+                etPassword.setText(getString("logPassword",""))
+                lnLogin.performClick()
+            } else {
+                lnLoginForm.visibility = View.VISIBLE
+                lnLoading.visibility = View.INVISIBLE
+            }
+        }
     }
 }

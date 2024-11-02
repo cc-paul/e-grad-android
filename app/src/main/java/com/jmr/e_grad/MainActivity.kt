@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,10 @@ import com.jmr.e_grad.recycleview.data.achievementPassItem
 import com.jmr.e_grad.recycleview.data.getGradItem
 import com.jmr.e_grad.services.apiServices
 import com.jmr.e_grad.services.utils
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.io.File
 
 
@@ -45,6 +50,7 @@ class MainActivity : AppCompatActivity() {
     private var currentDownloadId: Long = -1
     private var downloadHandler: Handler? = null
     private var downloadReceiver: BroadcastReceiver? = null
+    private var totalPress:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     R.id.navCover -> {
-                        replaceFragment(YearBook())
+                        replaceFragment(YearBook(mainActivity = this))
                         true
                     }
                     R.id.navProfile -> {
@@ -195,6 +201,21 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             utils.showToastMessage(this,"Unable to load data. Please connect to the internet")
+        }
+    }
+
+    override fun onBackPressed() {
+        totalPress++
+
+        if (totalPress == 1) {
+            utils.showToastMessage(this, "Double click to exit")
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(2000)
+                totalPress = 0
+            }
+        } else if (totalPress == 2) {
+            super.onBackPressed()
+            finish()
         }
     }
 }

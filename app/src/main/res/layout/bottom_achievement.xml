@@ -18,6 +18,7 @@
         tools:ignore="MissingConstraints">
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -26,6 +27,7 @@
                 android:layout_height="200dp">
 
                 <ImageView
+                    android:visibility="gone"
                     android:id="@+id/imgGradPic"
                     android:src="@drawable/sample_grad"
                     android:scaleType="centerCrop"
@@ -33,6 +35,7 @@
                     android:layout_height="match_parent"/>
 
                 <ImageView
+                    android:visibility="gone"
                     android:src="@drawable/border"
                     android:scaleType="centerCrop"
                     android:layout_width="match_parent"

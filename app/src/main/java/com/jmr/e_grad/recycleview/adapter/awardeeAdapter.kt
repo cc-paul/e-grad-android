@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.jmr.e_grad.R
 import com.jmr.e_grad.fragments.CourseList
 import com.jmr.e_grad.helper.linkHelper
@@ -33,6 +34,7 @@ class awardeeAdapter(
 
             Glide.with(itemView.context)
                 .load(Uri.parse(link))
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imgGradPic)
 
             tvFullName.text = item.fullName

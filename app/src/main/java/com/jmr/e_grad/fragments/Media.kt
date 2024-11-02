@@ -100,14 +100,16 @@ class Media(private var mainActivity: MainActivity) : Fragment() {
                         mediaDetails.forEach { currentMedia ->
                             currentMedia.apply {
                                 if (type == "pic") {
-                                    eventPicList.add(
-                                        mediaItem(
-                                            schoolYear,
-                                            fileName,
-                                            description,
-                                            type
+                                    if (isCoverPhoto == 0) {
+                                        eventPicList.add(
+                                            mediaItem(
+                                                schoolYear,
+                                                fileName,
+                                                description,
+                                                type
+                                            )
                                         )
-                                    )
+                                    }
                                 } else {
                                     eventVideoList.add(
                                         mediaItem(
@@ -121,8 +123,6 @@ class Media(private var mainActivity: MainActivity) : Fragment() {
                             }
                         }
                     }
-
-
                 }
 
                 loadPic()

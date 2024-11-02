@@ -8,7 +8,8 @@
     tools:context=".fragments.Login">
 
     <LinearLayout
-        android:id="@+id/lnRegistration"
+        android:visibility="invisible"
+        android:id="@+id/lnLoginForm"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -280,6 +281,20 @@
             </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/lnLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+<!--        <ImageView-->
+<!--            android:src="@drawable/campus_logo"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"/>-->
 
     </LinearLayout>
 

@@ -58,6 +58,12 @@ class Account : Fragment() {
         }
 
         imgExit.setOnClickListener {
+            sharedHelper.apply {
+                putString("logUsername","")
+                putString("logPassword","")
+                putInt("isLoggedInOneTime",0)
+            }
+
             activity?.let{
                 val intent = Intent (it, LoginActivity::class.java)
                 it.startActivity(intent)

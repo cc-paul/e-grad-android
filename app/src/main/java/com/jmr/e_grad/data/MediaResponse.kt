@@ -16,5 +16,6 @@ data class MediaData(
     val schoolYear: String,
     val fileName: String,
     val description: String,
-    val type: String
+    val type: String,
+    val isCoverPhoto: Int
 )
