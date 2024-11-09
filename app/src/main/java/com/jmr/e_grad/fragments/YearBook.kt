@@ -68,62 +68,68 @@ class YearBook(private var mainActivity: MainActivity) : Fragment() {
             )
 
             mainActivity.allowSwitching = false
+            arrCoverPhotos.clear()
 
             apiServices.getMedia(yearBookRelatedData) { it ->
                 if (it!!.success) {
                     val mediaResponse = it.data
 
-                    mediaResponse?.media?.let { mediaDetails ->
-                        mediaDetails.forEach { currentMedia ->
-                            currentMedia.apply {
-                                if (type == "pic") {
-                                    if (isCoverPhoto == 1) {
-                                        val link = linkHelper.eventPhotoLink + "${schoolYear}/${fileName}"
+                    if (mediaResponse!!.media!!.isNotEmpty()) {
+                        mediaResponse?.media?.let { mediaDetails ->
+                            mediaDetails.forEach { currentMedia ->
+                                currentMedia.apply {
+                                    if (type == "pic") {
+                                        if (isCoverPhoto == 1) {
+                                            val link = linkHelper.eventPhotoLink + "${schoolYear}/${fileName}"
 
-                                        arrCoverPhotos.add(
-                                            ImageItem(
-                                                fileName,
-                                                link
+                                            arrCoverPhotos.add(
+                                                ImageItem(
+                                                    fileName,
+                                                    link
+                                                )
                                             )
-                                        )
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                }
 
-
-                val imageAdapter = ImageAdapter()
-                val dotsImage = Array(arrCoverPhotos.size) {
-                    ImageView(requireContext())
-                }
-
-                mainActivity.allowSwitching = true
-
-                vpCoverPhotos.adapter = imageAdapter
-                imageAdapter.submitList(arrCoverPhotos)
-
-                dotsImage.forEach {
-                    it.setImageResource(R.drawable.icn_circle_unselected)
-                    lnDots.addView(it,params)
-                }
-                dotsImage[0].setImageResource(R.drawable.icn_circle_selected)
-
-                pageChangeListener = object : ViewPager2.OnPageChangeCallback() {
-                    override fun onPageSelected(position: Int) {
-                        dotsImage.mapIndexed { index, imageView ->
-                            if (position == index) {
-                                imageView.setImageResource(R.drawable.icn_circle_selected)
-                            } else {
-                                imageView.setImageResource(R.drawable.icn_circle_unselected)
+                        if (arrCoverPhotos.isNotEmpty()) {
+                            val imageAdapter = ImageAdapter()
+                            val dotsImage = Array(arrCoverPhotos.size) {
+                                ImageView(requireContext())
                             }
+
+                            vpCoverPhotos.adapter = imageAdapter
+                            imageAdapter.submitList(arrCoverPhotos)
+
+                            dotsImage.forEach {
+                                it.setImageResource(R.drawable.icn_circle_unselected)
+                                lnDots.addView(it,params)
+                            }
+                            dotsImage[0].setImageResource(R.drawable.icn_circle_selected)
+
+                            pageChangeListener = object : ViewPager2.OnPageChangeCallback() {
+                                override fun onPageSelected(position: Int) {
+                                    dotsImage.mapIndexed { index, imageView ->
+                                        if (position == index) {
+                                            imageView.setImageResource(R.drawable.icn_circle_selected)
+                                        } else {
+                                            imageView.setImageResource(R.drawable.icn_circle_unselected)
+                                        }
+                                    }
+                                    super.onPageSelected(position)
+                                }
+                            }
+
+                            vpCoverPhotos.registerOnPageChangeCallback(pageChangeListener)
+                        } else {
+                            utils.showToastMessage(requireContext(),"No cover photo(s) uploaded")
                         }
-                        super.onPageSelected(position)
+
+                        mainActivity.allowSwitching = true
                     }
                 }
-
-                vpCoverPhotos.registerOnPageChangeCallback(pageChangeListener)
             }
         }
     }
