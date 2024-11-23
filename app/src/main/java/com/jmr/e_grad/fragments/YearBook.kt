@@ -126,10 +126,10 @@ class YearBook(private var mainActivity: MainActivity) : Fragment() {
                         } else {
                             utils.showToastMessage(requireContext(),"No cover photo(s) uploaded")
                         }
-
-                        mainActivity.allowSwitching = true
                     }
                 }
+
+                mainActivity.allowSwitching = true
             }
         }
     }
