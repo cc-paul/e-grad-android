@@ -54,6 +54,7 @@ class BottomAchievement(private val achievement: List<Achievement>,private val a
     }
 
     private fun getAchievement() {
+        achievementList.clear()
         achievement[0].achievement.forEach {
             achievementList.add(it.titleName)
         }

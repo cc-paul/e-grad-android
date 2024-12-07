@@ -25,6 +25,31 @@
                 android:layout_width="200dp"
                 android:layout_height="80dp"/>
 
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="20sp"
+                    android:fontFamily="@font/man_bold"
+                    android:textColor="@color/white"
+                    android:text="Batch : "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvSchoolYear"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/man_bold"
+                    android:textColor="@color/white"
+                    android:text="0000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_weight="1"
                 android:id="@+id/rvAwardee"

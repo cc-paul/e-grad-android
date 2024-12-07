@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import com.google.gson.Gson
 import com.jmr.e_grad.MainActivity
 import com.jmr.e_grad.R
 import com.jmr.e_grad.data.YearBookRelatedData
+import com.jmr.e_grad.helper.sharedHelper
 import com.jmr.e_grad.helper.sharedHelper.getInt
 import com.jmr.e_grad.recycleview.adapter.awardeeAdapter
 import com.jmr.e_grad.recycleview.adapter.courseAdapter
@@ -26,6 +28,7 @@ import com.jmr.e_grad.services.utils
 
 class Awardee(private val mainActivity: MainActivity) : Fragment() {
     private lateinit var rvAwardee:RecyclerView
+    private lateinit var tvSchoolYear: TextView
 
     private val apiServices = apiServices()
     private val utils = utils()
@@ -47,8 +50,10 @@ class Awardee(private val mainActivity: MainActivity) : Fragment() {
 
         awardeeView.apply {
             rvAwardee = findViewById(R.id.rvAwardee)
+            tvSchoolYear = findViewById(R.id.tvSchoolYear)
         }
 
+        tvSchoolYear.text = getInt("yearGraduated").toString()
         loadAwardee()
 
         return awardeeView
